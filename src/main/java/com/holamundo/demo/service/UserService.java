@@ -61,6 +61,10 @@ public class UserService {
 
     }
 
+   public void deleteTaskUser(Long id, Long taskId) {
+        User user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("El usuario no existe"));
+        taskRepository.deleteById(taskId);
+   }
 
 
 

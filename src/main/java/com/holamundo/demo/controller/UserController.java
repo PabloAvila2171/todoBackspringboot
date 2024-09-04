@@ -35,11 +35,16 @@ public class UserController {
 
     }
 
-    @DeleteMapping("/{user_id}")
+    @DeleteMapping("/{user_id}/fdjodifjg")
     public String deleteUser(@PathVariable("user_id") Long user_id) {
         userService.deleteUser(user_id);
         return "usuario eliminadoooo";
+    }
 
+    @DeleteMapping("/{user_id}/{task_id}")
+    public String deleteTask(@PathVariable("user_id") Long user_id, @PathVariable("task_id")Long task_id) {
+        userService.deleteTaskUser(user_id,task_id);
+        return "Tarea eliminada";
     }
 
 
